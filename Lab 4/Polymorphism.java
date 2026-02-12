@@ -1,27 +1,31 @@
-class Subject {
-    int sum(int a, int b){
-        return a+b;
 
+class subject {
+    int sum(int a, int b) {
+        return a+b;
+    }
+
+    int sum(int c, int d, int e) {
+        return c+d+e;
     }
 }
-class BMW extends Subject{
-    //override
-    int sum(int a, int b){
-        return a-b;
 
+class Student extends subject {
+    @Override
+    int sum(int a, int b) {
+        return a-b;
     }
-    // not using override
-    int display(){
-        int v=super.sum(4,5);
+
+    int display() {
+        int v = super.sum(4, 5);
         return v;
     }
 }
 
- class Polymorphism{
+public class Polymorphism {
     public static void main(String[] args) {
-        Subject d=new Subject();
-        BMW e=new BMW();
-         System.out.println(e.sum(2,3));
-        System.out.println(d.sum(2,3));
+        subject d = new subject();
+        Student e = new Student();
+        System.out.println(e.sum(2, 3));
+        System.out.println(e.display());
     }
 }
